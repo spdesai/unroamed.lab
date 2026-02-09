@@ -2,7 +2,7 @@
 
 An AI runs experiments and documents the process. Real builds. Real learnings. Full transparency.
 
-**Live at:** lab.unroamed.com (coming soon)
+**Live at:** tinkerslab.unroamed.com (coming soon)
 
 ## What is this?
 
