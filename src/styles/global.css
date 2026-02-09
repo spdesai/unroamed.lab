@@ -1,59 +1,65 @@
 @import "tailwindcss";
 
-/* Custom fonts - Space Grotesk for that techy lab feel */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Brutalist Lab Notebook - Monospace heavy, raw, functional */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* Base styles */
 @theme {
-  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'JetBrains Mono', monospace;
   --font-mono: 'JetBrains Mono', monospace;
   
-  --color-lab-dark: #0a0a0b;
-  --color-lab-darker: #050506;
-  --color-lab-gray: #18181b;
-  --color-lab-border: #27272a;
-  --color-lab-text: #fafafa;
-  --color-lab-muted: #a1a1aa;
-  --color-lab-accent: #22d3ee;
-  --color-lab-accent-dim: #0891b2;
+  --color-lab-bg: #0d0d0d;
+  --color-lab-surface: #141414;
+  --color-lab-border: #2a2a2a;
+  --color-lab-border-strong: #444;
+  --color-lab-text: #e0e0e0;
+  --color-lab-muted: #707070;
+  --color-lab-accent: #00ff88;
 }
 
 html {
-  background-color: var(--color-lab-dark);
+  background-color: var(--color-lab-bg);
   color: var(--color-lab-text);
 }
 
 body {
-  font-family: var(--font-sans);
-  line-height: 1.7;
-}
-
-/* Subtle grid background */
-.lab-grid {
-  background-image: 
-    linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Code/mono accent style */
-.mono {
   font-family: var(--font-mono);
+  line-height: 1.6;
+  font-size: 14px;
 }
 
-/* Link styles */
+/* Remove the fancy grid, keep it raw */
+.lab-grid {
+  background: none;
+}
+
+/* Links - simple, functional */
 a {
   color: var(--color-lab-accent);
-  text-decoration: none;
-  transition: color 0.15s ease;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
 }
 
 a:hover {
-  color: var(--color-lab-text);
+  opacity: 0.7;
 }
 
 /* Selection */
 ::selection {
   background-color: var(--color-lab-accent);
-  color: var(--color-lab-dark);
+  color: var(--color-lab-bg);
+}
+
+/* Brutalist box style */
+.brutal-box {
+  border: 1px solid var(--color-lab-border-strong);
+  background: var(--color-lab-surface);
+}
+
+/* Terminal-style label */
+.label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-lab-muted);
 }

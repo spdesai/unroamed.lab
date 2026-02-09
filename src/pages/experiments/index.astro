@@ -6,7 +6,7 @@ const experiments = [
     id: '00',
     slug: '00-building-the-lab',
     title: 'Building the Lab',
-    description: 'The meta-experiment: documenting the creation of this very site.',
+    description: 'The meta-experiment: documenting the creation of this site.',
     status: 'active',
     date: '2026-02-06'
   }
@@ -14,45 +14,42 @@ const experiments = [
 ---
 
 <Layout title="Experiments">
-  <div class="space-y-12">
-    <section class="space-y-4">
-      <h1 class="text-4xl font-bold">Experiments</h1>
-      <p class="text-lg text-[--color-lab-muted]">
+  <div class="space-y-8">
+    <section>
+      <div class="label mb-4">experiments</div>
+      <h1 class="text-2xl font-bold mb-2">Experiments</h1>
+      <p class="text-[--color-lab-muted]">
         Real builds. Real outcomes. Fully documented.
       </p>
     </section>
 
-    <section class="space-y-4">
+    <section class="space-y-3">
       {experiments.map((exp) => (
-        <a href={`/experiments/${exp.slug}`} class="block p-6 bg-[--color-lab-gray]/50 border border-[--color-lab-border] rounded-lg hover:border-[--color-lab-muted] transition-colors">
+        <a href={`/experiments/${exp.slug}`} class="block p-4 border border-[--color-lab-border] no-underline hover:border-[--color-lab-accent] transition-colors">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-2">
-              <div class="flex items-center gap-3">
-                <span class="mono text-xs text-[--color-lab-muted]">EXP_{exp.id}</span>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs text-[--color-lab-muted]">EXP_{exp.id}</span>
                 <span class="text-xs text-[--color-lab-muted]">{exp.date}</span>
               </div>
-              <h3 class="text-xl font-semibold">{exp.title}</h3>
-              <p class="text-[--color-lab-muted]">{exp.description}</p>
+              <h3 class="font-bold text-[--color-lab-text] mb-1">{exp.title}</h3>
+              <p class="text-sm text-[--color-lab-muted]">{exp.description}</p>
             </div>
-            <span class={`px-2 py-1 text-xs mono rounded ${
+            <span class={`px-2 py-1 text-xs border ${
               exp.status === 'active' 
-                ? 'bg-[--color-lab-accent]/20 text-[--color-lab-accent]' 
-                : exp.status === 'complete'
-                ? 'bg-green-500/20 text-green-400'
-                : 'bg-[--color-lab-border] text-[--color-lab-muted]'
+                ? 'border-[--color-lab-accent] text-[--color-lab-accent]' 
+                : 'border-[--color-lab-border] text-[--color-lab-muted]'
             }`}>
-              {exp.status}
+              {exp.status.toUpperCase()}
             </span>
           </div>
         </a>
       ))}
     </section>
 
-    <section class="pt-8 p-6 border border-dashed border-[--color-lab-border] rounded-lg text-center">
-      <p class="text-[--color-lab-muted]">More experiments coming soon.</p>
-      <p class="text-sm text-[--color-lab-muted] mt-2">
-        <a href="/newsletter">Subscribe</a> to get notified.
-      </p>
+    <section class="p-4 border border-dashed border-[--color-lab-border] text-center text-sm text-[--color-lab-muted]">
+      <p>More experiments coming soon.</p>
+      <p class="mt-1"><a href="/newsletter">Subscribe</a> to get notified.</p>
     </section>
   </div>
 </Layout>

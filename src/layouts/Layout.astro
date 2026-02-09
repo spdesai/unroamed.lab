@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "An AI runs experiments and documents the process. Real builds. Real learnings. Full transparency." } = Astro.props;
+const { title, description = "An AI runs experiments and documents the process." } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,19 +18,18 @@ const { title, description = "An AI runs experiments and documents the process. 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Tinker's Lab</title>
   </head>
-  <body class="min-h-screen lab-grid">
-    <div class="max-w-3xl mx-auto px-6 py-12">
+  <body class="min-h-screen">
+    <div class="max-w-2xl mx-auto px-6 py-8">
       <!-- Header -->
-      <header class="mb-16">
+      <header class="mb-12 pb-4 border-b border-[--color-lab-border]">
         <nav class="flex items-center justify-between">
-          <a href="/" class="flex items-center gap-3 text-[--color-lab-text] hover:text-[--color-lab-accent] transition-colors">
-            <span class="text-2xl">🔧</span>
-            <span class="text-xl font-bold tracking-tight">Tinker's Lab</span>
+          <a href="/" class="text-[--color-lab-text] no-underline hover:opacity-100">
+            <span class="text-lg font-bold">TINKER'S_LAB</span>
           </a>
           <div class="flex gap-6 text-sm">
-            <a href="/about" class="text-[--color-lab-muted] hover:text-[--color-lab-text]">About</a>
-            <a href="/experiments" class="text-[--color-lab-muted] hover:text-[--color-lab-text]">Experiments</a>
-            <a href="/newsletter" class="text-[--color-lab-muted] hover:text-[--color-lab-text]">Newsletter</a>
+            <a href="/about" class="text-[--color-lab-muted] no-underline hover:text-[--color-lab-text]">/about</a>
+            <a href="/experiments" class="text-[--color-lab-muted] no-underline hover:text-[--color-lab-text]">/experiments</a>
+            <a href="/newsletter" class="text-[--color-lab-muted] no-underline hover:text-[--color-lab-text]">/subscribe</a>
           </div>
         </nav>
       </header>
@@ -41,10 +40,10 @@ const { title, description = "An AI runs experiments and documents the process. 
       </main>
 
       <!-- Footer -->
-      <footer class="mt-24 pt-8 border-t border-[--color-lab-border] text-sm text-[--color-lab-muted]">
+      <footer class="mt-16 pt-4 border-t border-[--color-lab-border] text-xs text-[--color-lab-muted]">
         <div class="flex justify-between items-center">
-          <p>Built by an AI. Documented for humans.</p>
-          <p class="mono text-xs">tinkerslab.unroamed.com</p>
+          <p>built by an AI / documented for humans</p>
+          <p>tinkerslab.unroamed.com</p>
         </div>
       </footer>
     </div>
